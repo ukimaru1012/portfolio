@@ -573,22 +573,22 @@ body { font-family: 'Noto Sans JP', 'Montserrat', sans-serif; overflow-x: hidden
                 </div>
                 
                 <!-- コンタクトフォーム -->
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" action="https://formspree.io/f/xbdbgbjj" method="POST">
                     <div class="mb-6">
                         <label class="block text-slate-700 font-medium mb-2" for="name">お名前</label>
-                        <input type="text" id="name" class="form-input" placeholder="山田 太郎" required>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="山田 太郎" required>
                     </div>
-                    
+
                     <div class="mb-6">
                         <label class="block text-slate-700 font-medium mb-2" for="email">メールアドレス</label>
-                        <input type="email" id="email" class="form-input" placeholder="example@email.com" required>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" required>
                     </div>
-                    
+
                     <div class="mb-6">
                         <label class="block text-slate-700 font-medium mb-2" for="message">メッセージ</label>
-                        <textarea id="message" rows="5" class="form-input" placeholder="ご相談内容をお聞かせください" required></textarea>
+                        <textarea id="message" name="message" rows="5" class="form-input" placeholder="ご相談内容をお聞かせください" required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn-primary w-full">
                         送信する
                         <i class="fas fa-paper-plane ml-2"></i>
@@ -718,36 +718,6 @@ skillCards.forEach(card => {
     });
 });
 
-// ======================================== コンタクトフォームの送信 ========================================
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    const button = contactForm.querySelector('button[type="submit"]');
-    const originalText = button.innerHTML;
-    
-    button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>送信中...';
-    button.disabled = true;
-    
-    setTimeout(() => {
-        button.innerHTML = '<i class="fas fa-check mr-2"></i>送信完了！';
-        button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-        
-        setTimeout(() => {
-            contactForm.reset();
-            button.innerHTML = originalText;
-            button.disabled = false;
-            button.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            
-            showNotification('メッセージを受け付けました！ありがとうございます。', 'success');
-        }, 2000);
-    }, 1500);
-});
 
 // ======================================== 通知表示機能 ========================================
 function showNotification(message, type = 'success') {
