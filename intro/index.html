@@ -4,279 +4,352 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>松丸 祐樹 | 自己紹介</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#1f3a5f;
-    --navy-deep:#16293f;
-    --teal:#2f9e8f;
-    --teal-soft:#e6f4f2;
-    --ink:#2b3440;
-    --sub:#5b6874;
-    --line:#e5e9ef;
-    --bg:#f6f8fb;
-    --card:#ffffff;
-    --shadow:0 6px 24px rgba(31,58,95,.08);
+    --bg:#ecece7;
+    --bg-alt:#f6f6f6;
+    --paper:#ffffff;
+    --ink:#1f1f1f;
+    --ink-soft:#4a4a48;
+    --sub:#9c9c9b;
+    --gold:#a28d69;
+    --gold-deep:#8a765422;
+    --line:#dcdcd4;
+    --line-soft:#e5e5de;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",system-ui,sans-serif;
-    color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;
+    font-family:"Noto Sans JP",游ゴシック体,"Yu Gothic",YuGothic,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+    font-weight:300;
+    color:var(--ink);background:var(--bg);
+    line-height:2;font-size:15px;letter-spacing:.04em;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 32px}
+  @media(max-width:640px){.wrap{padding:0 24px}}
+
+  .en-label{
+    font-family:"Jost",sans-serif;font-weight:300;
+    letter-spacing:.32em;text-transform:uppercase;
+  }
 
   /* ---- nav ---- */
   nav{
-    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+    background:rgba(236,236,231,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
   }
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  nav .brand{font-weight:700;color:var(--navy);letter-spacing:.02em}
-  nav ul{display:flex;gap:22px;list-style:none;font-size:14px}
-  nav a{color:var(--sub);text-decoration:none;transition:color .2s}
-  nav a:hover{color:var(--teal)}
-  @media(max-width:640px){nav ul{display:none}}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  nav .brand{
+    font-family:"Jost",sans-serif;font-weight:300;
+    font-size:14px;letter-spacing:.28em;color:var(--ink);
+  }
+  nav ul{display:flex;gap:30px;list-style:none;font-size:12px;letter-spacing:.14em}
+  nav a{color:var(--sub);text-decoration:none;transition:color .3s;font-weight:400}
+  nav a:hover{color:var(--gold)}
+  @media(max-width:820px){nav ul{display:none}}
 
   /* ---- hero ---- */
-  header.hero{
-    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
-    color:#fff;padding:72px 0 80px;position:relative;overflow:hidden;
+  header.hero{padding:120px 0 130px;background:var(--bg)}
+  @media(max-width:820px){header.hero{padding:72px 0 80px}}
+  .hero-grid{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:center}
+  .photo{overflow:hidden;background:var(--line-soft)}
+  .photo img{display:block;width:100%;aspect-ratio:1/1;object-fit:contain}
+  .hero .eyebrow{
+    font-family:"Jost",sans-serif;font-weight:300;font-size:11px;
+    letter-spacing:.42em;color:var(--gold);margin-bottom:22px;
   }
-  header.hero::after{
-    content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;
-    background:radial-gradient(circle,rgba(47,158,143,.35),transparent 70%);
+  .hero h1{
+    font-weight:200;font-size:40px;letter-spacing:.14em;line-height:1.35;margin-bottom:10px;
   }
-  .hero-grid{display:flex;align-items:center;gap:44px;position:relative;z-index:2}
-  .photo{
-    width:210px;flex-shrink:0;border-radius:16px;overflow:hidden;
-    box-shadow:0 12px 40px rgba(0,0,0,.35);border:4px solid rgba(255,255,255,.15);
+  .hero .name-en{
+    font-family:"Jost",sans-serif;font-weight:200;font-size:13px;
+    letter-spacing:.34em;color:var(--sub);text-transform:uppercase;margin-bottom:30px;
   }
-  .photo img{display:block;width:100%;height:260px;object-fit:cover;object-position:center}
-  @media(max-width:640px){.photo{width:200px}.photo img{height:240px}}
-  .hero h1{font-size:34px;letter-spacing:.04em;margin-bottom:4px}
-  .hero h1 span{font-size:16px;font-weight:400;opacity:.75;margin-left:10px}
-  .hero .role{font-size:15px;color:#bcd3ea;margin-bottom:14px}
   .hero .catch{
-    display:inline-block;font-size:20px;font-weight:700;
-    border-left:4px solid var(--teal);padding-left:12px;line-height:1.5;
+    font-weight:200;font-size:21px;line-height:1.9;letter-spacing:.08em;
+    padding-top:26px;border-top:1px solid var(--line);
   }
-  .hero .tags{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+  .hero .catch em{font-style:normal;color:var(--gold)}
+  .hero .tags{margin-top:30px;display:flex;flex-wrap:wrap;gap:0}
   .hero .tags span{
-    font-size:12.5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
-    padding:4px 11px;border-radius:999px;
+    font-family:"Jost",sans-serif;font-weight:300;font-size:11px;letter-spacing:.16em;
+    color:var(--sub);padding:0 16px;border-right:1px solid var(--line);line-height:1.2;
   }
-  @media(max-width:640px){
-    .hero-grid{flex-direction:column;text-align:center;gap:24px}
-    .hero .catch{border-left:none;border-top:3px solid var(--teal);padding:10px 0 0}
-    .hero .tags{justify-content:center}
+  .hero .tags span:first-child{padding-left:0}
+  .hero .tags span:last-child{border-right:none}
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .photo{max-width:240px}
+    .hero h1{font-size:30px}
+    .hero .catch{font-size:17px}
+    .hero .tags{gap:6px 0}
   }
 
   /* ---- sections ---- */
-  section{padding:56px 0}
-  .sec-head{margin-bottom:28px}
-  .sec-head .en{font-size:12px;letter-spacing:.18em;color:var(--teal);font-weight:700;text-transform:uppercase}
-  .sec-head h2{font-size:24px;color:var(--navy);margin-top:2px}
-  .lead{font-size:16px;color:var(--sub);max-width:720px}
+  section{padding:110px 0}
+  @media(max-width:820px){section{padding:72px 0}}
+  .tone{background:var(--bg-alt)}
 
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+  .sec-head{margin-bottom:56px}
+  .sec-head .en{
+    font-family:"Jost",sans-serif;font-weight:300;font-size:11px;
+    letter-spacing:.42em;color:var(--gold);text-transform:uppercase;
+    display:flex;align-items:center;gap:16px;margin-bottom:16px;
+  }
+  .sec-head .en::after{content:"";height:1px;flex:1;max-width:80px;background:var(--gold);opacity:.4}
+  .sec-head h2{font-weight:200;font-size:27px;letter-spacing:.16em;line-height:1.5}
+  .lead{font-size:14px;color:var(--sub);max-width:680px;margin-top:18px;letter-spacing:.06em}
 
   /* about */
-  .about-body{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:28px 30px;box-shadow:var(--shadow)}
-  .about-body p+p{margin-top:14px}
+  .about-body{max-width:760px}
+  .about-body p{font-size:15px;line-height:2.3;color:var(--ink-soft)}
+  .about-body p+p{margin-top:26px}
+  .about-body strong{font-weight:500;color:var(--ink);
+    background:linear-gradient(transparent 68%,var(--gold-deep) 68%)}
 
   /* can-do */
-  .cando{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .cando .item{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:24px 22px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
-  .cando .item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(31,58,95,.12)}
-  .cando .ic{width:44px;height:44px;border-radius:11px;background:var(--teal-soft);
-    color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
-  .cando h3{font-size:17px;color:var(--navy);margin-bottom:8px}
-  .cando p{font-size:14px;color:var(--sub);line-height:1.75}
-  @media(max-width:720px){.cando{grid-template-columns:1fr}}
+  .cando{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+  .cando .item{background:var(--bg-alt);padding:44px 34px;transition:background .4s}
+  .cando .item:hover{background:var(--paper)}
+  .cando .no{
+    font-family:"Jost",sans-serif;font-weight:200;font-size:32px;
+    letter-spacing:.1em;color:var(--gold);opacity:.55;margin-bottom:20px;line-height:1;
+  }
+  .cando h3{font-weight:500;font-size:15px;letter-spacing:.1em;margin-bottom:16px;line-height:1.7}
+  .cando p{font-size:13.5px;color:var(--sub);line-height:2.1}
+  @media(max-width:820px){.cando{grid-template-columns:1fr}.cando .item{padding:36px 28px}}
 
   /* timeline */
-  .timeline{position:relative;padding-left:26px}
-  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
-  .tl-item{position:relative;padding:0 0 24px 8px}
+  .timeline{position:relative;padding-left:32px;max-width:820px}
+  .timeline::before{content:"";position:absolute;left:4px;top:10px;bottom:10px;width:1px;background:var(--line)}
+  .tl-item{position:relative;padding-bottom:44px}
   .tl-item:last-child{padding-bottom:0}
-  .tl-item::before{content:"";position:absolute;left:-26px;top:5px;width:14px;height:14px;
-    border-radius:50%;background:var(--teal);border:3px solid #fff;box-shadow:0 0 0 1px var(--line)}
-  .tl-item .yr{font-size:12.5px;color:var(--teal);font-weight:700;letter-spacing:.03em}
-  .tl-item h3{font-size:16px;color:var(--navy);margin:2px 0 4px}
-  .tl-item p{font-size:14px;color:var(--sub)}
+  .tl-item::before{
+    content:"";position:absolute;left:-32px;top:9px;width:9px;height:9px;
+    border-radius:50%;background:var(--bg);border:1px solid var(--gold);
+  }
+  .tl-item .yr{
+    font-family:"Jost",sans-serif;font-weight:300;font-size:11px;
+    letter-spacing:.28em;color:var(--gold);text-transform:uppercase;
+  }
+  .tl-item h3{font-weight:500;font-size:16px;letter-spacing:.1em;margin:6px 0 8px}
+  .tl-item p{font-size:13.5px;color:var(--sub);line-height:2.1;max-width:640px}
 
   /* skills */
-  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .skill-cat{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:22px 22px 24px;box-shadow:var(--shadow)}
-  .skill-cat h3{font-size:15px;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-  .skill-cat h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--teal)}
+  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+  .skill-cat h3{
+    font-weight:400;font-size:12px;letter-spacing:.2em;color:var(--ink);
+    padding-bottom:14px;margin-bottom:20px;border-bottom:1px solid var(--line);
+  }
   .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chips span{font-size:13px;background:var(--teal-soft);color:#1f7a6f;
-    padding:5px 12px;border-radius:8px;border:1px solid #d3ebe7}
-  @media(max-width:720px){.skill-grid{grid-template-columns:1fr}}
+  .chips span{
+    font-size:12px;letter-spacing:.06em;color:var(--ink-soft);
+    padding:5px 13px;border:1px solid var(--line);transition:border-color .3s,color .3s;
+  }
+  .chips span:hover{border-color:var(--gold);color:var(--gold)}
+  @media(max-width:820px){.skill-grid{grid-template-columns:1fr;gap:36px}}
 
   /* certs */
-  .certs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .cert{background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px}
-  .cert .badge{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.05em}
-  .cert h3{font-size:15px;color:var(--navy)}
-  .cert p{font-size:13px;color:var(--sub)}
-  @media(max-width:720px){.certs{grid-template-columns:1fr}}
+  .certs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+  .cert{background:var(--bg);padding:32px 28px}
+  .tone .cert{background:var(--bg-alt)}
+  .cert .badge{
+    font-family:"Jost",sans-serif;font-weight:300;font-size:10px;
+    letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;
+  }
+  .cert h3{font-weight:500;font-size:14.5px;letter-spacing:.08em;line-height:1.7;margin-bottom:6px}
+  .cert p{font-size:12.5px;color:var(--sub)}
+  @media(max-width:820px){.certs{grid-template-columns:1fr}}
 
   /* person */
-  .person{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-  .hobbies{display:flex;flex-wrap:wrap;gap:10px}
-  .hobbies .h{background:var(--card);border:1px solid var(--line);border-radius:999px;
-    padding:8px 16px;font-size:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px}
-  .style-card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:22px 24px;box-shadow:var(--shadow)}
-  .style-card h3{font-size:15px;color:var(--navy);margin-bottom:12px}
-  .style-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-  .style-card li{font-size:14px;color:var(--sub);padding-left:22px;position:relative}
-  .style-card li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
-  @media(max-width:720px){.person{grid-template-columns:1fr}}
+  .person{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .hobbies{display:flex;flex-direction:column}
+  .hobbies .h{
+    font-size:14px;letter-spacing:.06em;color:var(--ink-soft);
+    padding:16px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline;
+  }
+  .hobbies .h:first-child{border-top:1px solid var(--line)}
+  .hobbies .h .n{
+    font-family:"Jost",sans-serif;font-weight:300;font-size:10px;
+    letter-spacing:.2em;color:var(--gold);opacity:.7;flex-shrink:0;
+  }
+  .style-card h3{
+    font-weight:400;font-size:12px;letter-spacing:.2em;
+    padding-bottom:14px;margin-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .style-card ul{list-style:none;display:flex;flex-direction:column;gap:18px}
+  .style-card li{font-size:13.5px;color:var(--sub);line-height:2;padding-left:26px;position:relative}
+  .style-card li::before{
+    content:"";position:absolute;left:0;top:13px;width:12px;height:1px;background:var(--gold);
+  }
+  @media(max-width:820px){.person{grid-template-columns:1fr;gap:44px}}
 
   /* contact */
-  #contact{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:#fff}
-  #contact .sec-head h2{color:#fff}
-  #contact .sec-head .en{color:#8fd6cb}
-  .contact-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+  #contact{background:var(--ink);color:#ecece7;padding:110px 0 0}
+  #contact .sec-head h2{color:#ecece7}
+  #contact .sec-head .en{color:var(--gold)}
+  #contact .sec-head .en::after{background:var(--gold)}
+  #contact .lead{color:#9c9c9b}
+  .contact-box{margin-top:8px}
   .contact-box a{
-    display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 20px;
-    text-decoration:none;font-size:15px;transition:background .2s}
-  .contact-box a:hover{background:rgba(255,255,255,.16)}
-  .contact-box .k{font-size:12px;color:#9fc4e6;display:block}
-  .contact-note{margin-top:16px;font-size:13.5px;color:#bcd3ea}
+    display:inline-flex;flex-direction:column;gap:6px;text-decoration:none;
+    padding-bottom:14px;border-bottom:1px solid rgba(162,141,105,.5);transition:border-color .3s;
+  }
+  .contact-box a:hover{border-color:var(--gold)}
+  .contact-box .k{
+    font-family:"Jost",sans-serif;font-weight:300;font-size:10px;
+    letter-spacing:.28em;color:var(--gold);text-transform:uppercase;
+  }
+  .contact-box .v{
+    font-family:"Jost",sans-serif;font-weight:200;font-size:21px;letter-spacing:.06em;color:#ecece7;
+  }
+  @media(max-width:640px){.contact-box .v{font-size:15px}}
+  .contact-note{margin-top:34px;font-size:12.5px;color:#9c9c9b;letter-spacing:.05em}
+  .contact-band{
+    margin-top:90px;background:var(--gold);color:#ecece7;text-align:center;
+    padding:26px 0;font-family:"Jost",sans-serif;font-weight:300;
+    font-size:11px;letter-spacing:.42em;text-transform:uppercase;
+    text-decoration:none;display:block;transition:opacity .3s;
+  }
+  .contact-band:hover{opacity:.82}
 
-  footer{background:var(--navy-deep);color:#8ba3bd;text-align:center;padding:22px 0;font-size:13px}
+  footer{
+    background:var(--ink);color:var(--sub);text-align:center;padding:26px 0;
+    font-family:"Jost",sans-serif;font-weight:300;font-size:10px;letter-spacing:.24em;
+  }
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="brand">松丸 祐樹</div>
+    <div class="brand">YUKI MATSUMARU</div>
     <ul>
-      <li><a href="#about">自己紹介</a></li>
-      <li><a href="#cando">頼れること</a></li>
-      <li><a href="#career">経歴</a></li>
-      <li><a href="#skills">スキル</a></li>
-      <li><a href="#person">人となり</a></li>
-      <li><a href="#contact">連絡先</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#cando">Service</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#person">Who I am</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap hero-grid">
-    <div class="photo"><img src="./profile.jpg" alt="松丸 祐樹"></div>
-    <div>
-      <h1>松丸 祐樹<span>Yuki Matsumaru</span></h1>
-      <div class="role">フリーランス IT エンジニア / 情報システム部門 BPO</div>
-      <div class="catch">技術と現場をつなぎ、<br>情シスの「困った」を一緒に解決します。</div>
+    <div class="photo rv"><img src="./profile.jpg" alt="松丸 祐樹のイラスト"></div>
+    <div class="rv">
+      <div class="eyebrow">Introduction</div>
+      <h1>松丸 祐樹</h1>
+      <div class="name-en">Yuki Matsumaru — Freelance IT Engineer</div>
+      <div class="catch">技術と現場をつなぎ、<br>情シスの「困った」を<em>一緒に</em>解きほぐす。</div>
       <div class="tags">
         <span>Entra ID / Intune</span>
         <span>Microsoft 365</span>
         <span>Azure</span>
-        <span>PMO / 業務改善</span>
-        <span>セキュリティ</span>
+        <span>PMO</span>
+        <span>Security</span>
       </div>
     </div>
   </div>
 </header>
 
 <!-- about -->
-<section id="about">
+<section id="about" class="tone">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="en">About</div>
       <h2>はじめまして</h2>
     </div>
-    <div class="about-body">
-      <p>このたびチームに参画させていただく、松丸 祐樹と申します。フリーランスの IT エンジニアとして、企業の<strong>情報システム部門を支える BPO</strong>を専門に活動しています。</p>
-      <p>情シスの現場では「人手が足りない」「専門領域を任せたい」「進め方を整理したい」といった悩みがつきものです。まずは<strong>実際の環境を確認して</strong>状況を把握したうえで、<strong>手を動かす実務から、進め方の整理・調整まで</strong>を幅広く担当します。難しい技術の話も、現場の言葉に翻訳して橋渡しすることを大切にしています。</p>
-      <p>気軽に声をかけていただける存在でありたいと思っています。分からないこと・困りごとがあれば、まずはお気軽にご相談ください。どうぞよろしくお願いします。</p>
+    <div class="about-body rv">
+      <p>このたびチームに参画させていただく、松丸 祐樹と申します。フリーランスの IT エンジニアとして、企業の<strong>情報システム部門を支える BPO</strong> を専門に活動しています。</p>
+      <p>情シスの現場には、「人手が足りない」「専門領域を任せたい」「進め方を整理したい」という悩みがいつもあります。まずは<strong>実際の環境を見て</strong>状況を掴む。そのうえで、<strong>手を動かす実務から、進め方の整理・調整まで</strong>を引き受けます。難しい技術の話は、現場の言葉に翻訳してから渡す。そこは崩さずにやってきました。</p>
+      <p>目指しているのは、気軽に声をかけてもらえる存在であることです。分からないこと、困っていること、まだ言葉になっていないモヤモヤでも構いません。どうぞよろしくお願いします。</p>
     </div>
   </div>
 </section>
 
 <!-- can do -->
-<section id="cando" style="background:#eef2f7">
+<section id="cando">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="en">What I can help</div>
-      <h2>こんなときに頼ってください</h2>
-      <p class="lead">得意領域を3つにまとめました。この範囲であれば、日々の運用から立ち上げ・改善まで幅広くお任せいただけます。</p>
+      <h2>こんなときに、頼ってください</h2>
+      <p class="lead">得意領域は大きく3つ。この範囲なら、日々の運用から立ち上げ・改善までまとめてお任せいただけます。</p>
     </div>
-    <div class="cando">
+    <div class="cando rv">
       <div class="item">
-        <div class="ic">🔐</div>
+        <div class="no">01</div>
         <h3>Entra ID / Intune・M365 運用</h3>
-        <p>アカウント・端末管理、条件付きアクセス、キッティング設計、Exchange / SharePoint / Teams の設定・トラブル対応まで。日々の情シス運用をまるごと支えます。</p>
+        <p>アカウントと端末の管理、条件付きアクセス、キッティング設計、Exchange / SharePoint / Teams の設定とトラブル対応まで。日々の情シス運用をまるごと支えます。</p>
       </div>
       <div class="item">
-        <div class="ic">🛠️</div>
+        <div class="no">02</div>
         <h3>基盤構築・セキュリティ</h3>
-        <p>Azure を中心とした基盤の全体設計、Zero Trust・SASE を意識したセキュリティ強化。オンプレからクラウドまで、環境の立ち上げと見直しに対応します。</p>
+        <p>Azure を軸にした基盤の全体設計と、Zero Trust・SASE を見据えたセキュリティ強化。オンプレからクラウドまで、環境の立ち上げと見直しに対応します。</p>
       </div>
       <div class="item">
-        <div class="ic">📋</div>
+        <div class="no">03</div>
         <h3>PMO・業務改善</h3>
-        <p>プロジェクトの進行管理、ドキュメント整備、IT ガバナンス。RPA・データ分析を使った業務効率化の企画から実行までサポートします。</p>
+        <p>プロジェクトの進行管理、ドキュメント整備、IT ガバナンス。RPA やデータ分析を使った業務効率化を、企画から実行まで伴走します。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- career -->
-<section id="career">
+<section id="career" class="tone">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="en">Career</div>
       <h2>これまでの歩み</h2>
     </div>
-    <div class="timeline">
+    <div class="timeline rv">
       <div class="tl-item">
-        <div class="yr">現在</div>
+        <div class="yr">Now</div>
         <h3>フリーランス IT エンジニア / 情シス BPO</h3>
-        <p>人材サービス、スポーツ興行、製造、スタートアップなど、幅広い業界のクライアントの情シス業務を支援。</p>
+        <p>人材サービス、スポーツ興行、製造、スタートアップ。業界を問わず、クライアントの情シス業務を支援しています。</p>
       </div>
       <div class="tl-item">
-        <div class="yr">前職</div>
+        <div class="yr">Previous</div>
         <h3>IT コンサルタント（情シス SES）</h3>
-        <p>10 社以上のクライアントを支援。BPO と業務改善の推進を通じて、幅広い業種の情シス現場を経験。</p>
+        <p>10 社以上を担当。BPO と業務改善の推進を通じて、さまざまな業種の情シス現場を見てきました。</p>
       </div>
       <div class="tl-item">
-        <div class="yr">3年間</div>
+        <div class="yr">3 Years</div>
         <h3>プログラマー / 社内 SE</h3>
-        <p>開発から運用保守まで一通りを担当。作る側・守る側の両方の目線を養う。</p>
+        <p>開発から運用保守まで一通りを担当。作る側と守る側、両方の目線がここで身につきました。</p>
       </div>
       <div class="tl-item">
-        <div class="yr">3年間</div>
+        <div class="yr">3 Years</div>
         <h3>スーツ販売士（店舗マネジメント）</h3>
-        <p>接客・店舗運営を通じてリーダーシップとコミュニケーションの土台を築く。IT 一辺倒でない現場感が強みです。</p>
+        <p>接客と店舗運営で、リーダーシップとコミュニケーションの土台を築いた時期。IT 一辺倒ではない現場感は、ここが原点です。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- skills -->
-<section id="skills" style="background:#eef2f7">
+<section id="skills">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="en">Skills</div>
       <h2>スキルセット</h2>
     </div>
-    <div class="skill-grid">
+    <div class="skill-grid rv">
       <div class="skill-cat">
-        <h3><span class="dot"></span>Microsoft / クラウド</h3>
+        <h3>MICROSOFT / CLOUD</h3>
         <div class="chips">
           <span>Entra ID</span><span>Intune</span><span>Microsoft 365</span>
           <span>Exchange Online</span><span>SharePoint</span><span>Teams</span>
@@ -284,14 +357,14 @@
         </div>
       </div>
       <div class="skill-cat">
-        <h3><span class="dot"></span>インフラ / セキュリティ</h3>
+        <h3>INFRA / SECURITY</h3>
         <div class="chips">
           <span>基盤の全体設計</span><span>オンプレ基盤</span>
           <span>Zero Trust</span><span>SASE</span><span>AI 駆動型セキュリティ</span>
         </div>
       </div>
       <div class="skill-cat">
-        <h3><span class="dot"></span>開発 / 業務改善</h3>
+        <h3>DEVELOPMENT / BPR</h3>
         <div class="chips">
           <span>Python</span><span>JavaScript</span><span>React</span>
           <span>BPR</span><span>RPA</span><span>データ分析</span>
@@ -300,55 +373,53 @@
       </div>
     </div>
 
-    <div class="sec-head" style="margin-top:40px">
+    <div class="sec-head rv" style="margin-top:88px">
       <div class="en">Certifications</div>
       <h2>資格</h2>
     </div>
-    <div class="certs">
+    <div class="certs rv">
       <div class="cert">
-        <div class="badge">国家資格</div>
+        <div class="badge">National</div>
         <h3>応用情報技術者</h3>
         <p>IPA（情報処理推進機構）</p>
       </div>
       <div class="cert">
-        <div class="badge">ベンダー資格</div>
+        <div class="badge">Vendor</div>
         <h3>Microsoft Azure Fundamentals（AZ-900）</h3>
         <p>Microsoft</p>
       </div>
       <div class="cert">
-        <div class="badge">ビジネス</div>
+        <div class="badge">Business</div>
         <h3>簿記 / FP</h3>
-        <p>会計・お金まわりの基礎も理解</p>
+        <p>会計・お金まわりの基礎も理解しています</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- person -->
-<section id="person">
+<section id="person" class="tone">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="en">Who I am</div>
       <h2>人となり</h2>
-      <p class="lead">仕事の話だけでなく、こんな人間です。休憩時間の雑談ネタにでもしてもらえたら嬉しいです。</p>
+      <p class="lead">仕事の話だけではなく、こんな人間です。休憩時間の雑談ネタにでもしてもらえたら。</p>
     </div>
-    <div class="person">
-      <div>
-        <div class="hobbies">
-          <span class="h">⚽ 柏レイソル歴20年のサポーター</span>
-          <span class="h">🍺 ビールが好き</span>
-          <span class="h">🎵 音楽鑑賞</span>
-          <span class="h">🏃 運動・健康管理</span>
-          <span class="h">👧 2人の娘の父</span>
-        </div>
+    <div class="person rv">
+      <div class="hobbies">
+        <div class="h"><span class="n">01</span>柏レイソル歴 20 年のサポーター</div>
+        <div class="h"><span class="n">02</span>ビールが好き</div>
+        <div class="h"><span class="n">03</span>音楽鑑賞</div>
+        <div class="h"><span class="n">04</span>運動・健康管理</div>
+        <div class="h"><span class="n">05</span>2 人の娘の父</div>
       </div>
       <div class="style-card">
         <h3>仕事で大切にしていること</h3>
         <ul>
           <li>専門用語をかみ砕いて、現場の言葉で伝える</li>
           <li>「聞きやすい人」でいること</li>
-          <li>リスクや懸念は遠慮なく early に共有する</li>
-          <li>属人化を避け、記録・仕組みで残す</li>
+          <li>リスクや懸念は、遠慮せず早い段階で共有する</li>
+          <li>属人化を避け、記録と仕組みで残す</li>
         </ul>
       </div>
     </div>
@@ -358,24 +429,34 @@
 <!-- contact -->
 <section id="contact">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="en">Contact</div>
       <h2>連絡先</h2>
-      <p class="lead" style="color:#bcd3ea">お気軽にご連絡ください。日本全国リモート対応可能です。</p>
+      <p class="lead">お気軽にご連絡ください。日本全国リモート対応可能です。</p>
     </div>
-    <div class="contact-box">
+    <div class="contact-box rv">
       <a href="mailto:yuki.matsumaru.job@gmail.com">
-        <span>✉️</span>
-        <span><span class="k">Email</span>yuki.matsumaru.job@gmail.com</span>
+        <span class="k">Email</span>
+        <span class="v">yuki.matsumaru.job@gmail.com</span>
       </a>
     </div>
-    <p class="contact-note">※ チャット（Teams / Slack 等）でのご連絡も歓迎です。気軽に声をかけてください。</p>
+    <p class="contact-note rv">※ チャット（Teams / Slack 等）でのご連絡も歓迎です。気軽に声をかけてください。</p>
   </div>
+  <a href="#" class="contact-band">Back to top</a>
 </section>
 
 <footer>
-  © 2026 松丸 祐樹
+  © 2026 YUKI MATSUMARU
 </footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
